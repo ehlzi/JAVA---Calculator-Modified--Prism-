@@ -9,14 +9,9 @@ import java.util.Scanner;
 
 
 class Main {
-
   
-  
-  public static void main(String[] args) {
+public static void main(String[] args) {
 
-    System.out.println("---------------------------------- \n" + "Welcome to  Elzie's Logic Based (Basic - Modified) Calculator \n" + "----------------------------------");
-	  System.out.println("The basic calculator has no UI and supports basic mathematical fuctions like: \n" + "\n" + "1. Addition (+) \n" + "2. Subtraction (-) \n" + "3. Multiplication (* OR x) \n" + "4. Division (/) \n");
-    
     //Variables
     //doubles for numbers with deciaml points
     double num1, num2, answer;
@@ -27,100 +22,99 @@ class Main {
     //Scanner Input Initialization
     Scanner UserInput = new Scanner(System.in);
 
+    System.out.println("---------------------------------- \n" + "Welcome to  Elzie's Logic Based (Basic - Modified) Calculator \n" + "----------------------------------");
+	System.out.println("The basic calculator has no UI and supports basic mathematical fuctions like: \n" + "\n" + "1. Addition (+) \n" + "2. Subtraction (-) \n" + "3. Multiplication (* OR x) \n" + "4. Division (/) \n");
+
     //LOGIC
     System.out.println("Type 'Go' to begin, or 'Close' to exit the program." + "\n");
     choice = UserInput.next().charAt(0);
 
-    if (choice == 'G') {
+    switch (choice) {
 
-      while (true) {
+        case 'G' :
 
-        System.out.println();
-        System.out.println("Operator (or type Close to exit program): ");
-        operator = UserInput.next().charAt(0);
-  
-        switch (operator) {
+            while (true) {
+
+                System.out.println();
+                System.out.println("Operator (or type Restart to restart and Close to exit program): ");
+                operator = UserInput.next().charAt(0);
+      
+                switch (operator) {
+                  
+                    case '+' :
+      
+                    System.out.println("First Number: ");
+                    num1 = UserInput.nextDouble();
+      
+                    System.out.println("Second Number: ");
+                    num2 = UserInput.nextDouble();
+      
+                    answer = num1 + num2;
+                    System.out.println(num1 + " + " + num2 + " = " + answer);
+                    break;
+      
+                    case '-' :
+      
+                    System.out.println("First Number: ");
+                    num1 = UserInput.nextDouble();
+      
+                    System.out.println("Second Number: ");
+                    num2 = UserInput.nextDouble();
+      
+                    answer = num1 - num2;
+                    System.out.println(num1 + " - " + num2 + " = " + answer);
+                    break;
+      
+                    case '*' :
+      
+                    System.out.println("First Number: ");
+                    num1 = UserInput.nextDouble();
+      
+                    System.out.println("Second Number: ");
+                    num2 = UserInput.nextDouble();
+      
+                    answer = num1 * num2;
+                    System.out.println(num1 + " * " + num2 + " = " + answer);
+                    break;
+      
+                    case '/' :
+      
+                    System.out.println("First Number: ");
+                    num1 = UserInput.nextDouble();
+      
+                    System.out.println("Second Number: ");
+                    num2 = UserInput.nextDouble();
+      
+                    answer = num1 / num2;
+                    System.out.println(num1 + " / " + num2 + " = " + answer);
+                    break;
+    
+                    case 'C' :
+            
+                    System.out.println();
+                    System.exit(0);
+    
+                    default :
+    
+                    System.out.println("Please select the correct operator - +, -, *, or /" + "\n");
+                    break;
               
-        case '+' :
-  
-        System.out.println("First Number: ");
-        num1 = UserInput.nextDouble();
-  
-        System.out.println("Second Number: ");
-        num2 = UserInput.nextDouble();
-  
-        answer = num1 + num2;
-        System.out.println(num1 + " + " + num2 + " = " + answer);
-        break;
-  
-        case '-' :
-  
-        System.out.println("First Number: ");
-        num1 = UserInput.nextDouble();
-  
-        System.out.println("Second Number: ");
-        num2 = UserInput.nextDouble();
-  
-        answer = num1 - num2;
-        System.out.println(num1 + " - " + num2 + " = " + answer);
-        break;
-  
-        case '*' :
-  
-        System.out.println("First Number: ");
-        num1 = UserInput.nextDouble();
-  
-        System.out.println("Second Number: ");
-        num2 = UserInput.nextDouble();
-  
-        answer = num1 * num2;
-        System.out.println(num1 + " * " + num2 + " = " + answer);
-        break;
-  
-        case '/' :
-  
-        System.out.println("First Number: ");
-        num1 = UserInput.nextDouble();
-  
-        System.out.println("Second Number: ");
-        num2 = UserInput.nextDouble();
-  
-        answer = num1 / num2;
-        System.out.println(num1 + " / " + num2 + " = " + answer);
-        break;
-
-        case 'C' :
+                }
+    
+            }
         
-        System.out.println();
+        case 'C' :
+            
+        System.out.println("Bye" + "\n");
         System.exit(0);
 
-        default :
+        case 'A', 'B', 'D', 'E', 'F', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' :
 
-        System.out.println("Please select the correct operator - +, -, *, or /" + "\n");
-        break;
-          
-      }
-
+        System.out.println("\n" + "I don't understand.. Please try again!" + "\n");
+        main(args);
+    
     }
-  
-  }
 
-  if (choice == 'C') {
-
-    System.out.println("Bye!" + "\n");
-    System.exit(0);
-
-  }
-
-  if (!(choice == 'G') || (choice == 'C')) {
-
-    System.out.println("\n" + "I do not understand..");
-    System.exit(0);
-
-  }
-
-
-  
     UserInput.close();
 
   }
