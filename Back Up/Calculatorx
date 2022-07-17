@@ -19,7 +19,7 @@ public static void main(String[] args) {
     int choice;
     int prismChoice;
 
-    int operator;
+    char operator;
 
     //Scanner Input Initialization
     Scanner UserInput = new Scanner(System.in);
@@ -43,17 +43,14 @@ public static void main(String[] args) {
 
             while (true) {
 
-                System.out.println();
-                System.out.println("Welcome to the basic calculator!");
-                System.out.println("\n" + "1. Addition \n" + "2. Subtraction \n" + "3. Multiplication \n" + "4. Division \n" + "5. Restart Program\n" + "6. Close Program \n");
-                operator = UserInput.nextInt();
+                System.out.println("Welcome to the basic calculator! \n");
+                System.out.println("Select operator, type 'R' (to restart), or 'C' (to close to exit program): ");
+                operator = UserInput.next().charAt(0);
       
                 switch (operator) {
-
-                    case 1 :
-
-                    System.out.println();
-
+                  
+                    case '+' :
+      
                     System.out.println("First Number: ");
                     num1 = UserInput.nextDouble();
       
@@ -61,14 +58,11 @@ public static void main(String[] args) {
                     num2 = UserInput.nextDouble();
       
                     answer = num1 + num2;
-                    System.out.println(num1 + " + " + num2 + " = " + answer + "\n");
-                    
+                    System.out.println(num1 + " + " + num2 + " = " + answer);
                     break;
       
-                    case 2 :
-
-                    System.out.println();
-
+                    case '-' :
+      
                     System.out.println("First Number: ");
                     num1 = UserInput.nextDouble();
       
@@ -76,14 +70,11 @@ public static void main(String[] args) {
                     num2 = UserInput.nextDouble();
       
                     answer = num1 - num2;
-                    System.out.println(num1 + " - " + num2 + " = " + answer + "\n");
-                    
+                    System.out.println(num1 + " - " + num2 + " = " + answer);
                     break;
       
-                    case 3 :
-                            
-                    System.out.println();
-
+                    case '*' :
+      
                     System.out.println("First Number: ");
                     num1 = UserInput.nextDouble();
       
@@ -91,13 +82,10 @@ public static void main(String[] args) {
                     num2 = UserInput.nextDouble();
       
                     answer = num1 * num2;
-                    System.out.println(num1 + " * " + num2 + " = " + answer + "\n");
-                    
+                    System.out.println(num1 + " * " + num2 + " = " + answer);
                     break;
       
-                    case 4 :
-
-                    System.out.println();
+                    case '/' :
       
                     System.out.println("First Number: ");
                     num1 = UserInput.nextDouble();
@@ -106,34 +94,33 @@ public static void main(String[] args) {
                     num2 = UserInput.nextDouble();
       
                     answer = num1 / num2;
-                    System.out.println(num1 + " / " + num2 + " = " + answer + "\n");
-                    
+                    System.out.println(num1 + " / " + num2 + " = " + answer);
                     break;
     
-                    case 5 :
-                            
-                    main(args);
-
-                    case 6 :
-                    
+                    case 'C' :
+            
+                    System.out.println();
                     System.exit(0);
+
+                    case 'R' :
+                    
+                    main(args);
 
                     default :
     
                     System.out.println("\n" + "Please select the correct operator - +, -, *, or /" + "\n");
-                    
                     break;
-
-                    }
-
+              
+                }
+    
             }
-
+        
         case 2 :
 
         while (true) {
 
-            System.out.println("\n"+ "Welcome to the prism Calculator!" + "\n" + "Are we calculating a new Prism or correcting? \n");
-            System.out.println("\n" + "1. New Prism \n" + "2. Correcting Old Prism \n" + "3. Restart Program \n" + "4. Exit Program" + "\n");
+            System.out.println("Welcome to the prism Calculator!" + "\n" + "Are we calculating a new Prism or correcting?" + "\n");
+            System.out.println("1. New Prism \n" + "2. Correcting Old Prism \n" + "3. Restart Program \n" + "4. Exit Program" + "\n");
             prismChoice = UserInput.nextInt();
 
             switch (prismChoice) {
@@ -147,7 +134,7 @@ public static void main(String[] args) {
                 lensDecentration = UserInput.nextInt();
 
                 prismPower = (lensPower * lensDecentration) / 10;
-                System.out.println("\n" + "The result is " + prismPower + "\n");
+                System.out.println("The result is " + prismPower + "\n");
                 
                 break;
 
@@ -173,7 +160,7 @@ public static void main(String[] args) {
 
                 totalPower = prismPower1 + prismPower2;
 
-                System.out.println("\n" + "The total power would be :" + totalPower + "\n");
+                System.out.println("The total power would be :" + totalPower + "\n");
                 
                 break;
 
@@ -186,19 +173,21 @@ public static void main(String[] args) {
                 System.out.println();
                 System.exit(0);
 
-                }
 
             }
+            
+
+        }
 
         case 3 :
 
         System.out.println("\n" + "I don't understand.. Please try again!" + "\n");
         main(args);
     
-        }
+    }
 
     UserInput.close();
-    
-    }
+
+  }
 
 }
